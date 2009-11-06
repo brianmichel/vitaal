@@ -1,6 +1,7 @@
 <h1>Add a new course</h1>
 <%= form_tag :action => 'create' %>
 
+<div id="entry">
 <p><label for="courseName">Course Name</label>:
 <%= text_field 'course', 'courseName'%></p>
 <p><label for="courseCity">Course City</label>:
@@ -11,6 +12,7 @@
 <%= text_field 'course', 'courseCountry'%></p>
 <p><label for="courseID">Course ID</label>:
 <%= text_field 'course', 'courseID'%></p>
+</div>
 
 <%= submit_tag "Submit"%>
 <%= form_tag %>
