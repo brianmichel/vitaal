@@ -1,0 +1,20 @@
+<h1>Add a new course</h1>
+<%= form_tag :action => 'create' %>
+
+<p><label for="courseName">Course Name</label>:
+<%= text_field 'course', 'courseName'%></p>
+<p><label for="courseCity">Course City</label>:
+<%= text_field 'course', 'courseCity'%></p>
+<p><label for="courseState">Course State</label>:
+<%= text_field 'course', 'courseState'%></p>
+<p><label for="courseCountry">Course Country</label>:
+<%= text_field 'course', 'courseCountry'%></p>
+<p><label for="courseID">Course ID</label>:
+<%= text_field 'course', 'courseID'%></p>
+
+<%= submit_tag "Submit"%>
+<%= form_tag %>
+<%= link_to 'Back', {:action => 'list'} %>
+
+
+	

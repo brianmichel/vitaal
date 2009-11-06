@@ -1,0 +1,12 @@
+<h1>Create a new user</h1>
+<%= form_tag :action => 'create'%>
+
+<p><label for="firstName">First Name</label>:
+<%= text_field 'user', 'firstName'%></p>
+<p><label for="lastName">Last Name</label>:
+<%= text_field 'user', 'lastName'%></p>
+<p><label for="active">Active</label>:
+<%= check_box 'user', 'active'%></p>
+
+<%= submit_tag "Create" %>
+<%= link_to 'Back', {:action => 'list'} %>

@@ -1,0 +1,30 @@
+<script type="text/javascript" src="http://www.jquery.com/src/jquery-latest.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#flash").fadeOut(2000);
+	});
+</script>
+
+<% if @course.blank? %>
+	<p>Sorry, There are no courses yet!</p>
+<% else %>
+	<p>This is the list of courses</p>
+<ul id="courses">
+<div id="flash">
+<%= flash[:notice]%>
+</div>
+<br />
+<% @course.each do |c| %>
+	<li><%= link_to c.courseName, {:action => 'show', :id => c.id} -%> 
+		<tr>
+			<th><%= link_to "Delete", {:action => 'delete', :id => c.id} -%></th> 
+			<th><%= link_to "Edit", {:action => 'edit', :id => c.id} -%></th>
+		</tr>
+	</li>
+<% end %>
+</ul>
+<% end %><br />
+<p><%= link_to "Add new Course", {:action => 'new' } %></p>
+
+

@@ -1,0 +1,14 @@
+<% if @user.blank? %>
+	<p>Sorry, There are no users yet!</p>
+<% else %>
+	<p>This is the list of users</p>
+<ul id="users">
+<% @user.each do |u| %>
+	<% @fullname = u.firstName + " " + u.lastName %>
+	<li><%= link_to @fullname, {:action => 'show', :id => u.id} -%> <%= link_to "(Edit)", {:action => 'edit', :id => u.id} %> <%= link_to "(Delete)", 	 {:action => 'delete', :id => u.id}%></li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to "Add new User", {:action => 'new' } %></p>
+
+<%= @user.blank? %>

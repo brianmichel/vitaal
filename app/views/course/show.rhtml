@@ -1,0 +1,13 @@
+<script type="text/javascript" src="http://www.jquery.com/src/jquery-latest.js"></script>
+
+<h1><%= @course.courseName %></h1>
+<div id="showcourse">
+<p><strong>Course ID: </strong> <%= @course.id %><br />
+   <strong>Course Location: </strong> <%= @course.courseCity %>, <%= @course.courseState %><br />
+   <% @url = 'http://maps.google.com/maps/api/staticmap?center='+@course.courseName+','+ @course.courseState+'&zoom=14&size=512x512&maptype=roadmap&sensor=false&key=ABQIAAAA4gC4Yv3aEGEE5sOQvLME7BTXnGhO3-BmCshLr10Ixr7q6iciYBSKb7ayTjIgqq9oJk6Qqs3dXQvU-A%' %>
+	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Horsham,+PA&amp;sll=37.0625,-95.677068&amp;sspn=40.409448,92.197266&amp;ie=UTF8&amp;hq=&amp;hnear=Horsham,+Montgomery,+Pennsylvania&amp;ll=40.178414,-75.128546&amp;spn=0.022952,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Horsham,+PA&amp;sll=37.0625,-95.677068&amp;sspn=40.409448,92.197266&amp;ie=UTF8&amp;hq=&amp;hnear=Horsham,+Montgomery,+Pennsylvania&amp;ll=40.178414,-75.128546&amp;spn=0.022952,0.036478&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+   <strong>Created Date: </strong> <%= @course.created_at %><br />
+</p>
+</div>
+
+<p><%= link_to "Back", {:action => 'list' }%></p>
