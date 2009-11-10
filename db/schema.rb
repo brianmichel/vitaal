@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091105191921) do
+ActiveRecord::Schema.define(:version => 20091109212721) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "commentID"
+    t.text     "commentBody"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "courseID"
@@ -19,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20091105191921) do
     t.string   "courseCountry"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ownerID"
   end
 
   create_table "runs", :force => true do |t|
@@ -28,12 +36,14 @@ ActiveRecord::Schema.define(:version => 20091105191921) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "userID"
-    t.string   "firstName"
-    t.string   "lastName"
-    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.string   "username"
+    t.string   "email"
+    t.string   "name"
   end
 
 end

@@ -1,11 +1,4 @@
 <h1>Edit User Details</h1>
 <%= form_tag :action => 'update', :id => @user.id %>
-<p><label for="firstName">First Name</label>:
-<%= text_field 'user', 'firstName' %></p>
-<p><label for="lastName">Last Name</label>:
-<%= text_field 'user', 'lastName' %></p>
-<p><label for="active">Active</label>:
-<%= check_box 'user', 'active' %></p>
-
-<%= submit_tag "Save Changes" %>
+<%= render :partrial => 'entry' %>
 <%= link_to 'Back', {:action => 'list' } %>

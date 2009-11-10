@@ -1,0 +1,105 @@
+#errorExplanation h2 {
+	width: 490px;
+	padding-top: 12px;
+	font-weight: bold;
+	text-align: center;
+	border-bottom-color: black;
+	border-left-style: none;
+	border-bottom-style: solid;
+	border-right-style: none;
+	border-top-style: none;
+	border-bottom-width: 2px;
+	height: 2em;
+	margin-top: 0px;
+	background-color: #ff000c;
+	color: black;
+	font-size: 17px;
+	font-family: helvetica;
+}
+
+#errorExplanation {
+	margin-right: auto;
+	margin-left: auto;
+	width: 490px;
+	color: black;
+	font-size: 12px;
+	font-family: helvetica;
+	border-width: 2px;
+	border-color: black;
+	border-style: solid;
+	background-color: #f6f5ff;
+}
+
+#errorExplanation ul li {
+	font-family: helvetica;
+	font-style: italic;
+}
+
+#entry {
+	margin-right: auto;
+	margin-left: auto;
+	border-color: #b1c6ff;
+	font-size: 12px;
+	font-family: helvetica;
+	border-style: solid;
+	border-width: 2px;
+	width: 490px;
+}
+
+#entry p label {
+	list-style-position: outside;
+	word-break: normal;
+	font-style: italic;
+	font-size: 12px;
+	font-family: helvetica;
+}
+
+#entry p label input {
+	font-size: 12px;
+	font-family: helvetica;
+}
+
+.fieldWithErrors input {
+	text-align: left;
+	display: inline;
+	border-color: #ff000c;
+	border-style: inset;
+	border-width: 2px;
+}
+
+.fieldWithErrors {
+	display: inline;
+}
+
+#entry input {
+	text-align: left;
+}
+#user_nav {
+	float: right;
+	font-size: 12px;
+}
+#container {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: 500px;
+	height: auto;
+	display: block;
+	float: none;
+	border-color: #8090ff;
+	border-style: solid;
+	padding-left: 12px;
+	background-color: #d6d4ff;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 12px;
+}
+a:hover {
+	text-decoration: underline;
+	font-family: helvetica;
+}
+a {
+	text-decoration: none;
+	font-family: helvetica;
+}
+
+

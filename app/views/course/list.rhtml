@@ -12,7 +12,7 @@ $(document).ready(function(){
 	<p>This is the list of courses</p>
 <ul id="courses">
 <div id="flash">
-<%= flash[:notice]%>
+<%=flash[:notice]%>
 </div>
 <br />
 <% @course.each do |c| %>
@@ -26,5 +26,3 @@ $(document).ready(function(){
 </ul>
 <% end %><br />
 <p><%= link_to "Add new Course", {:action => 'new' } %></p>
-
-

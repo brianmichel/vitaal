@@ -1,0 +1,11 @@
+<div id="entry">
+<ul>
+	<li><label for="courseName">Course Name</label>:<%= text_field 'course', 'courseName'%></li>
+	<li><label for="courseCity">Course City</label>:<%= text_field 'course', 'courseCity'%></li>
+	<li><label for="courseState">Course State</label>:<%= text_field 'course', 'courseState'%></li>
+	<li><label for="courseCountry">Course Country</label>:<%= text_field 'course', 'courseCountry'%></li>
+	<li><label for="courseID">Course ID</label>:<%= text_field 'course', 'courseID'%></li>
+	<li><label for="ownerID">Owning User</label>:<%= collection_select(:course, :ownerID, User.all, :id, :name)%></li>
+<ul>
+<%= submit_tag "Submit" %>
+</div>
