@@ -1,5 +1,8 @@
-<h1>Record for <%= @user.firstName + " " + @user.lastName %></h1>
-<p><strong>Active: </strong> <%= @user.active %><br />
+<h1>Record for <%= @user.name %></h1>
+<p><strong>E-Mail: </strong> <%= @user.email %><br />
 </p>
+<p><strong>Owner Courses: </strong><br />
+
+<%= @user.id%>
 
 <p><%= link_to "Back", {:action => 'list' }%></p>
