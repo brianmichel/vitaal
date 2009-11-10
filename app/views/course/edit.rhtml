@@ -1,5 +1,8 @@
+<%= stylesheet_link_tag 'stylesheet' %>
+
 <h1>Edit <%= @course.courseName %></h1>
 <%= form_tag :action => 'update', :id => @course.id %>
+<%= error_messages_for 'course' %><br />
 <%= render :partial => 'entryform' %>
 
 <%= @course.id %>
