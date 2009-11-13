@@ -1,6 +1,10 @@
 <script type="text/javascript" src="http://www.jquery.com/src/jquery-latest.js"></script>
 <%= stylesheet_link_tag 'stylesheet' %>
 <div id="container">
+	<div id="headertop"></div>
+	<div id="logoheader">
+		<%= link_to image_tag("vitaallogo.png"), root_path  %>		
+	</div>
 	<div id="user_nav">
 		<% if current_user%>
 			<%= link_to "Logout", logout_path %>
@@ -8,6 +12,7 @@
 			<%= link_to "Register", {:controller => 'user', :action => 'new'}%> |
 			<%= link_to "Login", login_path %>
 		<% end %>
-	</div>
+	</div><br />
 	<%= yield %>	
 </div>
+
