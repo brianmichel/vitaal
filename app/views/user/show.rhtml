@@ -2,7 +2,22 @@
 <p><strong>E-Mail: </strong> <%= @user.email %><br />
 </p>
 <p><strong>Owner Courses: </strong><br />
-
+<% Course.all do |c|%>
+	<% unless c.ownerID == @user.id %>
+		<li><%= c.courseName %></li>
+	<% end %>
+<% end %>
 <%= @user.id%>
+<br />
+<% if @user.runs.empty? %>
+
+<% else %>
+<p><strong>Runs:</strong><br />
+	<% @user.runs.each do |r| %>
+		<li><%= r["created_at"] %></li>
+	<% end %>
+</p>
+<% end %>
+	
 
 <p><%= link_to "Back", {:action => 'list' }%></p>
