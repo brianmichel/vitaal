@@ -1,4 +1,6 @@
 class CourseController < ApplicationController
+  before_filter :authorize, :except => [:list, :show]
+  
   def list
     @course = Course.find(:all)
   end
