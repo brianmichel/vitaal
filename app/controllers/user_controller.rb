@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+   before_filter :authorize, :except => [:new, :create, :list, :show]
+   
   def list
     @user = User.find(:all)
   end
