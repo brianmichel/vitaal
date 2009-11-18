@@ -2,24 +2,29 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#flash").fadeOut(2000);
+	$("#flash").fadeOut(3000);
 	});
 </script>
-
 <% if @course.blank? %>
 	<p>Sorry, There are no courses yet!</p>
 <% else %>
 	<p>This is the list of courses</p>
+<% flash.each do |key, msg| %>
+	<%= content_tag :div, msg, :class => [key, " message"], :id => "notice_ #{key}" %>
+	<% content_tag :script, :type => "text/javascript" do %>
+		setTimeout("new Effect.Fade('notice_<%= key %>);", 2000);
+	<% end %>
+<% end %>
 <ul id="courses">
-<div id="flash">
-<%=flash[:notice]%>
-</div>
 <br />
 <% @course.each do |c| %>
 	<li><%= link_to c.courseName, {:action => 'show', :id => c.id} -%> 
 		<tr>
+			<% if current_user.nil? %>
+			<% else %>
 			<th><%= link_to "Delete", {:action => 'delete', :id => c.id} -%></th> 
 			<th><%= link_to "Edit", {:action => 'edit', :id => c.id} -%></th>
+			<% end %>
 		</tr>
 	</li>
 <% end %>
