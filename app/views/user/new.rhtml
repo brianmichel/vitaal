@@ -2,7 +2,8 @@
 
 <%= form_tag :action => 'create'%>
 <%= stylesheet_link_tag 'stylesheet' %>
+<div id="registration_form">
 <%= render :partial => 'entry' %>
-	
+</div>
 <%= form_tag %>
 <%= link_to 'Back', {:action => 'list'} %>
