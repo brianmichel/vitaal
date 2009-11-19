@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
   
   def authorize
-   unless current_user.nil?
+   if current_user.nil?
      redirect_to root_url
      flash[:notice] = "Not Authorized"
      false
