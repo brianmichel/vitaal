@@ -7,6 +7,10 @@
 <ul id="users">
 <% @user.each do |u| %>
 	<li><%= link_to u.name, {:action => 'show', :id => u.id} -%> <%= link_to "(Edit)", {:action => 'edit', :id => u.id} %> <%= link_to "(Delete)", 	 {:action => 'delete', :id => u.id}%></li>
+	<% if Friendship.find(:first, :conditions => {:friend_id => u.id, :user_id => current_user.id})%>
+	<% else %>
+		<%= link_to "Follow", friendships_path(:friend_id => u), :method => :post%>
+	<% end %>
 <% end %>
 </ul>
 <% end %>
