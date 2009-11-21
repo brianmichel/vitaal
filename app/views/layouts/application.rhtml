@@ -1,18 +1,38 @@
-<script type="text/javascript" src="http://www.jquery.com/src/jquery-latest.js"></script>
-<%= stylesheet_link_tag 'stylesheet' %>
-<div id="container">
-	<div id="headertop"></div>
-	<div id="logoheader">
-		<%= link_to image_tag("vitaallogo.png"), root_path  %>		
-	</div>
-	<div id="user_nav">
-		<% if current_user%>
-			<%= link_to "Logout", logout_path %>
-		<% else %>
-			<%= link_to "Register", {:controller => 'user', :action => 'new'}%> |
-			<%= link_to "Login", login_path %>
-		<% end %>
-	</div><br />
-	<%= yield %>	
-</div>
-
+<html>
+	<head>
+		<%= javascript_include_tag ['jquery-1.3.2', 'application'], :cache => true %>
+		<%= javascript_include_tag ['http://jqueryui.com/latest/ui/effects.core.js']%>
+		<%= javascript_include_tag ['http://jqueryui.com/latest/ui/effects.slide.js']%>
+		<%= stylesheet_link_tag 'stylesheet' %>
+	</head>
+	<body>
+		<script type="text/javascript">
+		$(document).ready(function () {
+			$("login").click(function(){
+				$(this).hide("slide", { direction: "down"}, 5000);
+			});
+		});
+		</script>
+		<div id="container">
+			<div id="left_nav">
+				<p>Core Functions Will Go Here</p>
+			</div>
+			<div id="headertop"></div>
+			<div id="logoheader">
+				<%= link_to image_tag("vitaallogo.png"), root_path  %>		
+			</div>
+			<div id="user_nav">
+				<% if current_user%>
+					<%= link_to "Logout", logout_path %>
+				<% else %>
+					<%= link_to "Register", {:controller => 'user', :action => 'new'}%> |
+					<%= link_to "Login", login_path %>
+				<% end %>
+			</div><br />
+			<%= yield %>	
+		</div>
+		<div id="login">
+ 			<strong>nonononononononono</strong>
+		</div>
+	</body>
+</html>

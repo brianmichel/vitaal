@@ -1,12 +1,19 @@
 <h1>Record for <%= @user.name %></h1>
 <p><strong>E-Mail: </strong> <%= @user.email %><br />
 </p>
-<p><strong>Owner Courses: </strong><br />
+<p><strong>Owner of Courses: </strong><br />
 <% owned = Course.find(:all, :conditions => {:ownerID => @user.id}) %>
 <% owned.each do |o| %>
 	<li><%= link_to o["courseName"], {:controller => 'course', :action => 'show', :id => o["id"]} %></li>
 <% end %>
 
+<p><strong>Friends: </strong><br />
+	<% for friendship in @user.friendships %>
+	<li>
+		<%=h friendship.friend.name %>
+		(<%= link_to "remove", {:controller => 'friendships', :action => 'delete', :id => friendship.id}%>)
+	</li>
+	<% end %>
 <br />
 <% if @user.runs.empty? %>
 <% else %>
