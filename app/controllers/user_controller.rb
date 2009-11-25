@@ -3,6 +3,10 @@ class UserController < ApplicationController
    
   def list
     @user = User.find(:all)
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @user }
+    end
   end
   
   def show

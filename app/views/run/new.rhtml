@@ -1,0 +1,18 @@
+<% form_for @run do |f| -%>
+	<%= f.error_messages %>
+	
+	<p>
+		<%= f.label :course_id %>
+		<%= collection_select(:run, :course_id, Course.all, :courseID, :courseName)%>
+	</p>
+	<p>
+		<%= f.label :user_id %>
+		<%= collection_select(:run, :user_id, User.all, :id, :name)%>
+	<p>
+		<%= hidden_field :created_at, value=Time.now %>
+	</p>
+	<p class="submit"><%= f.submit "Submit", :class => "submit"%>
+		
+	
+  
+<% end -%>

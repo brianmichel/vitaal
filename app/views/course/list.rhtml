@@ -3,10 +3,12 @@
 <% else %>
 	<p>This is the list of courses</p>
 <% flash.each do |key, msg| %>
-	<%= content_tag :div, msg, :class => [key, " message"], :id => "notice_ #{key}" %>
-	<% content_tag :script, :type => "text/javascript" do %>
-		setTimeout("new Effect.Fade('notice_<%= key %>);", 2000);
-	<% end %>
+	<%= content_tag :div, msg, :class => [key, " message"], :id => "notice_#{key}" %>
+	<script type="text/javascript">
+		$("#notice_notice").ready(function(){
+			$(this).hide("slow");
+		});
+	</script>
 <% end %>
 <ul id="courses">
 <br />
