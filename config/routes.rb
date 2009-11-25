@@ -42,7 +42,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :runs, :controller => 'run'
   map.resource :user_sessions
   map.resource :friendships
-  map.resource :friendship
   map.resource :users, :controller => 'user'
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
