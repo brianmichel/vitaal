@@ -15,7 +15,15 @@ class CourseController < ApplicationController
   
   def create
     @course = Course.new(params[:course])
+    @event = Events.new(:data => {
+      "course_name" => @course.courseName,
+      "course_city" => @course.courseCity,
+      "course_state" => @course.courseState,
+      "course_id" => @course.courseID,
+      "created_by" => current_user.name
+    }, :user_id => current_user.id, :event_type => "course_add")
     if @course.save
+      @event.save
       flash[:notice] = "The course has been successfully created!"
       redirect_to :action => 'list'
     else
