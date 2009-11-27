@@ -13,16 +13,20 @@
 <ul id="courses">
 <br />
 <% @course.each do |c| %>
-	<li><%= link_to c.courseName, {:action => 'show', :id => c.id} -%> 
+	<li><%= link_to_remote c.courseName, 
+				:url => {:action => 'show', :id => c.id},
+				:update => { :success => "site", :error => "error" } -%> 
 		<tr>
 			<% if current_user.nil? %>
 			<% else %>
 			<th><%= link_to "Delete", {:action => 'delete', :id => c.id} -%></th> 
-			<th><%= link_to "Edit", {:action => 'edit', :id => c.id} -%></th>
+			<th><%= link_to_remote "Edit", 
+						:url => {:action => 'edit', :id => c.id},
+						:update => { :success => "site", :error => "error" } -%></th>
 			<% end %>
 		</tr>
 	</li>
 <% end %>
 </ul>
 <% end %><br />
-<p><%= link_to "Add new Course", {:action => 'new' } %></p>
+<p><%= link_to "Add new Course", { :action => 'new' } %></p>
