@@ -45,24 +45,24 @@ body {
 #course_entry {
 	margin-right: auto;
 	margin-left: auto;
-	font-size: 12px;
 	font-family: helvetica;
 	border-width: 2px;
 	width: 490px;
 }
 
-#course_entry p label {
-	list-style-position: outside;
-	word-break: normal;
-	font-style: italic;
-	font-size: 12px;
-	font-family: helvetica;
+#container form #course_entry p label {
+	font-size: 18px;
+	text-align: left;
 }
 
-#course_entry p label input {
-	font-size: 25px;
-	font-family: helvetica;
+#course_entry p input.text_field {
+	width:  480px;
+	font-size:  28px;
 }
+#course_entry p input.text_field:focus {
+	 background-color: #fffbd6;
+}
+
 
 .fieldWithErrors input.text_field {
 	width: 480px;
@@ -80,9 +80,6 @@ body {
 	display: inline;
 }
 
-#course_entry input {
-	text-align: left;
-}
 #user_nav {
 	width: 100px;
 	margin-right: -15px;
