@@ -1,11 +1,30 @@
 <div id="course_entry">
-<ul>
-	<li><label for="courseName">Course Name</label>:<%= text_field 'course', 'courseName'%></li>
-	<li><label for="courseCity">Course City</label>:<%= text_field 'course', 'courseCity'%></li>
-	<li><label for="courseState">Course State</label>:<%= text_field 'course', 'courseState'%></li>
-	<li><label for="courseCountry">Course Country</label>:<%= text_field 'course', 'courseCountry'%></li>
-	<li><label for="courseID">Course ID</label>:<%= text_field 'course', 'courseID'%></li>
-	<li><label for="ownerID">Owning User</label>:<%= collection_select(:course, :ownerID, User.all, :id, :name)%></li>
-<ul>
-<%= submit_tag "Submit" %>
+	<% form_for @course do |c| %>
+		<%= c.error_messages %>
+		<p>
+			<%= c.label "Course Name" %>
+			<%= c.text_field :courseName, :class => "text_field" %>
+		</p>
+		<p>
+			<%= c.label "Course City" %>
+			<%= c.text_field :courseCity, :class => "text_field" %>
+		</p>
+		<p>
+			<%= c.label "Course State" %>
+			<%= c.text_field :courseState, :class => "text_field" %>
+		</p>
+		<p>
+			<%= c.label "Course Country" %>
+			<%= c.text_field :courseCountry, :class => "text_field" %>
+		</p>
+		<p>
+			<%= c.label "Course ID" %>
+			<%= c.text_field :courseID, :class => "text_field" %>
+		</p>
+		<p>
+			<%= c.label "Course Owner" %>
+			<%= collection_select(:course, :ownerID, User.all, :id, :name) %>
+		</p>
+		<p><%= c.submit "Submit" %>
+	<% end %>	
 </div>
