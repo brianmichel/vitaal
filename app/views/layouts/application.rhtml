@@ -3,22 +3,27 @@
 		<%= javascript_include_tag ['jquery-1.3.2', 'application'], :cache => true %>
 		<%= javascript_include_tag ['effects.core'], :cache => true %>
 		<%= javascript_include_tag ['effects.slide'], :cache => true %>
+		<%= javascript_include_tag :defaults, :cache => true %>
 		<%= stylesheet_link_tag 'stylesheet' %>
 	</head>
 	<body>
 		<% if current_user.nil?%>
 			<script type="text/javascript">
-				$(document).ready(function(){
-					$("#login").hide();
+				jQuery.noConflict;
+				
+				jQuery(document).ready(function(){
+					jQuery("#login").hide();
 				});
 			</script>
 		<% else %>
 			<script type="text/javascript">
-				$(document).ready(function () {
-						$("#login").show("slide", { direction: "up"}, 500);
+				jQuery.noConflict;
+				jQuery(document).ready(function () {
+						jQuery("#login").show("slide", { direction: "up"}, 500);
 				});
 			</script>
 		<% end %>
+	<div id="site">
 		<div id="container">
 			<div id="left_nav">
 				<p>Core Functions Will Go Here</p>
@@ -35,10 +40,11 @@
 					<%= link_to "Login", login_path %>
 				<% end %>
 			</div><br />
-			<%= yield %>	
+			<%= yield %>
 		</div>
 		<div id="login">
 			<p><strong>(lorem)</strong></p>
 		</div>
+	</div>
 	</body>
 </html>

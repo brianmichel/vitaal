@@ -41,6 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "course", :action => "list"
   map.resource :runs, :controller => 'run'
   map.resource :user_sessions
+  map.resource :courses
   map.resource :friendships
   map.resource :users, :controller => 'user'
   map.login "login", :controller => "user_sessions", :action => "new"
