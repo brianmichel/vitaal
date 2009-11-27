@@ -20,7 +20,7 @@ class UserController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to :action => 'list'
+        redirect_to :action => 'list'
     else
       render :action => 'new'
     end

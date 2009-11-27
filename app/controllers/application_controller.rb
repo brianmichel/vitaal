@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
-  helper_method :current_user, :authorize
+  helper_method :current_user, :authorize, :create_newcourse_event
  
   private
   
@@ -27,5 +27,4 @@ class ApplicationController < ActionController::Base
      false
     end
   end
-  
 end

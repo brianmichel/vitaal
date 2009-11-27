@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_authentic
+  validates_uniqueness_of :username
   has_many :runs
   has_many :courses, :through => :runs
   
