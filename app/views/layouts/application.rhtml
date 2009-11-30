@@ -43,7 +43,12 @@
 			<%= yield %>
 		</div>
 		<div id="login">
-			<p><strong>(lorem)</strong></p>
+			<% for event in Events.all do %>
+				<% if event.event_type = "course_add"%>
+					<li><%= event.data["created_by"]%> just made a new course called <%= event.data["course_name"]%></li>
+				<% elseif event.event_type = "course_delete"%>
+					<li><%= event.data["created_by"] %> just deleted the course</li>
+			<% end %>
 		</div>
 	</div>
 	</body>
