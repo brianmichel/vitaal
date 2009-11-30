@@ -234,7 +234,7 @@ body {
 }
 #activity {
 	width: 490px;
-	height: 100px;
+	height: auto;
 	position:  relative;
 	border-color: #5d5d5b;
 	border-style: solid;
