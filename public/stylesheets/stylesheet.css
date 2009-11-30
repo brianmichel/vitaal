@@ -232,7 +232,7 @@ body {
 #container #registration_form  p input.text_field:focus {
 	background-color: #fffbd6;
 }
-#login {
+#activity {
 	width: 490px;
 	height: 100px;
 	position:  relative;
