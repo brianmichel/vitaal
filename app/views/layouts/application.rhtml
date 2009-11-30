@@ -12,14 +12,14 @@
 				jQuery.noConflict;
 				
 				jQuery(document).ready(function(){
-					jQuery("#login").hide();
+					jQuery("#activity").hide();
 				});
 			</script>
 		<% else %>
 			<script type="text/javascript">
 				jQuery.noConflict;
 				jQuery(document).ready(function () {
-						jQuery("#login").show("slide", { direction: "up"}, 500);
+						jQuery("#activity").show("slide", { direction: "up"}, 500);
 				});
 			</script>
 		<% end %>
@@ -42,7 +42,7 @@
 			</div><br />
 			<%= yield %>
 		</div>
-		<div id="login">
+		<div id="activity">
 			<% for event in Events.all do %>
 				<% if event.event_type = "course_add"%>
 					<li><%= event.data["created_by"]%> just made a new course called <%= event.data["course_name"]%></li>
