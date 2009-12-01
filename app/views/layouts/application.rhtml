@@ -26,7 +26,7 @@
 	<div id="site">
 		<div id="container">
 			<div id="left_nav">
-				<p>Core Functions Will Go Here</p>
+				<%= link_to "Home", root_url %><%= link_to "Users", {:controller => 'user', :action => 'list'} %>	
 			</div>
 			<div id="headertop"></div>
 			<div id="logoheader">
@@ -44,10 +44,11 @@
 		</div>
 		<div id="activity">
 			<% for event in Events.all do %>
-				<% if event.event_type = "course_add"%>
-					<li><%= event.data["created_by"]%> just made a new course called <%= event.data["course_name"]%></li>
-				<% elseif event.event_type = "course_delete"%>
-					<li><%= event.data["created_by"] %> just deleted the course</li>
+					<% if event.event_type == 'course_add' %>
+						<li><%= event.data["created_by"]%> just made a new course called <%= event.data["course_name"]%></li>
+					<% else %>
+						<li><%= event.data["created_by"]%> just friended <%= event.data["friend_name"]%></li>
+					<% end %>
 			<% end %>
 		</div>
 	</div>
